@@ -7,10 +7,6 @@ const NewsData = () => {
     const [newsData, setNewsData] = useState([]);
     const [selectOption, setSelectOption] = useState('general');
 
-    // Ensure your Alan AI key is stored in an environment variable
-    const alanKey = process.env.REACT_APP_ALAN_API;
-
-
     const getAllNews = async (category) => {
         try {
             const response = await GetNews(category);
@@ -43,7 +39,7 @@ const NewsData = () => {
 
     return (
         <div className="main">
-            <h1>Voice News</h1>
+            <h1>ALAN AI VOICE NEWS APP</h1>
             <div className="select">
                 <label htmlFor="category">Choose a category:</label>
                 <select className="select-box" name="category" id="category" onChange={selectCategory} value={selectOption}>
@@ -51,6 +47,8 @@ const NewsData = () => {
                     <option value="business">Business</option>
                     <option value="health">Health</option>
                     <option value="sports">Sports</option>
+                    <option value="politics">Politics</option>
+                    <option value="entertainment">Entertainment</option>
                 </select>
             </div>
             <div className="grid-main">

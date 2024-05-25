@@ -1,4 +1,4 @@
-.main{
+.main {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,55 +6,101 @@
   padding: 20px;
 }
 
-.grid-main{
+.grid-main {
   display: grid;
-  grid-template-columns: auto;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns for larger screens */
   gap: 20px;
-}
-
-.grid-child{
-  border: 1px solid #e0e0e0;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.news-image{
   width: 100%;
 }
 
-.news-title{
-  font-size: 25px;
+.grid-child {
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff; /* Add background color for better appearance */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  transition: transform 0.2s; /* Smooth transform on hover */
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensure grid-child takes full height */
+}
+
+.grid-child:hover {
+  transform: translateY(-5px); /* Lift the card slightly on hover */
+}
+
+.news-image {
+  width: 100%;
+  height: 200px; /* Set fixed height for images */
+  object-fit: cover; /* Ensure images cover the area without distortion */
+  border-radius: 10px; /* Rounded corners for images */
+}
+
+.news-title {
+  font-size: 20px;
   font-weight: 600;
+  margin: 10px 0; /* Spacing between title and content */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* Limit title to 2 lines */
+  overflow: hidden; /* Hide overflow text */
 }
 
-.news-content{
+.news-content {
   font-size: 16px;
+  margin: 10px 0; /* Spacing between content and author/date */
+  flex-grow: 1; /* Ensure content area grows to fill space */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* Limit content to 3 lines */
+  overflow: hidden; /* Hide overflow text */
 }
 
-.news-author{
+.news-author,
+.news-date {
   font-size: 14px;
+  color: #555; /* Softer color for metadata */
 }
 
-.news-date{
-  font-size: 14px;
-}
-
-.space-between{
+.space-between {
   display: flex;
   justify-content: space-between;
 }
 
-.select{
+.select {
   margin: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 300px;
+  width: 350px;
+  background-color: #f5f2f2;
+  padding-left: 5px;
 }
 
-.select-box{
+.select-box {
   width: 200px;
-  height: 25px;
-   border: 1px solid #e0e0e0;
+  height: 30px; /* Increased height for better accessibility */
+  border: 1px solid #e0e0e0;
   outline: none;
+  border-radius: 5px; /* Rounded corners for select box */
+  padding: 5px; /* Padding inside select box */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+  .grid-main {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for medium screens */
+  }
+}
+
+@media (max-width: 900px) {
+  .grid-main {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for small screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-main {
+    grid-template-columns: 1fr; /* 1 column for very small screens */
+  }
 }
