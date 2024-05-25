@@ -34,3 +34,27 @@
 .news-author{
   font-size: 14px;
 }
+
+.news-date{
+  font-size: 14px;
+}
+
+.space-between{
+  display: flex;
+  justify-content: space-between;
+}
+
+.select{
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 300px;
+}
+
+.select-box{
+  width: 200px;
+  height: 25px;
+   border: 1px solid #e0e0e0;
+  outline: none;
+}

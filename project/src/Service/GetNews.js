@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios';
 
-export const GetNews = () => {
+export const GetNews = (category) => {
 
-   return axios.get(`${process.env.REACT_APP_API_Endpoint}&apiKey=${process.env.REACT_APP_API_Key}`)
+   return axios.get(`${process.env.REACT_APP_API_Endpoint}&category=${category}&apiKey=${process.env.REACT_APP_API_Key}`)
 }
