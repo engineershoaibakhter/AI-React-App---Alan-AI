@@ -1,0 +1,36 @@
+.main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.grid-main{
+  display: grid;
+  grid-template-columns: auto;
+  gap: 20px;
+}
+
+.grid-child{
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.news-image{
+  width: 100%;
+}
+
+.news-title{
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.news-content{
+  font-size: 16px;
+}
+
+.news-author{
+  font-size: 14px;
+}
